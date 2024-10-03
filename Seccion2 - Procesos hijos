@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+int main (int argc, char* argv[]){
+int x;
+pid_t pid_hijo1, pid_hijo2, pid_hijo3;
+
+pid_hijo1=fork();
+if (pid_hijo1==0){
+for(x=0;x<=100;x=x+1)
+        printf("%d\n",x);
+        sleep(2);
+        exit(0);}
+
+pid_hijo2=fork();
+if (pid_hijo2==0){
+for(x=0;x<=100;x=x+1)
+        printf("%d\n",x);
+        sleep(2);
+        exit(0);}
+
+pid_hijo3=fork();
+if (pid_hijo3==0){
+for(x=0;x<=100;x=x+1)
+        printf("%d\n",x);
+        sleep(2);
+        exit(0);}
+
+ for(x=0;x<=100;x=x+1)
+ printf("%d\n",x);
+ sleep(10);
+ exit(0);
+}
