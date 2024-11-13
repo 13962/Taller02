@@ -1,0 +1,83 @@
+#!/bin/bash
+
+echo "Ingrese los valores de x, y, y z: "
+read x
+read y
+read z
+
+ if [[ "$x" =~ ^[0-9]+$ && "$y" =~ ^[0-9]+$ && "$z" =~ ^[0-9]+$ ]]
+ then 
+  	resultado=$(( ($x**3)/($y+1)+(7+$z) ))
+ 	echo "El resultado es: $resultado "
+ else
+ 	echo "Un valor de los ingresados no es un numero"
+ fi
+
+otro:
+#!/bin/bash
+
+function generar_patron () {
+
+	for((j=0; j < n ;j++))
+	do
+		if (( 0 == j || j+1 == n )) 
+		then 
+			echo -n "1"
+		else 
+			echo -n "0"
+		fi 
+	done
+		
+echo ""
+	
+	for((j = 1; j < n+1;j++))
+	do
+		if (( n/2 == j || j == n ))
+		then
+			echo -n "2"
+		else 
+			echo -n "0"
+		fi 
+	done
+		
+echo ""
+		
+	for((j = 0; j < n ;j++))
+	do
+			if (( j+1 == n/2+1 ))
+			then 
+			echo -n "3"
+			else 
+			echo -n "0"
+			fi 
+	done
+
+echo ""
+
+	for((j = 1; j<n+1 ;j++))
+	do
+		if (( n/2 == j || j == n ))
+		then 
+			echo -n "2"
+		else 
+			echo -n "0"
+		fi 
+	done
+	
+echo ""
+
+	for((j = 0; j < n ;j++))
+	do
+		if (( 0 == j || j+1 == n )) 
+		then 
+			echo -n "1"
+		else 
+			echo -n "0"
+		fi 
+	done
+echo ""
+}
+
+echo "Ingrese el número: "
+read n  
+generar_patron $n 
